@@ -1,9 +1,8 @@
 package main
 
 import (
-	"flag"
 	"fmt"
-	"strings"
+	"reflect"
 )
 
 // a pointer value is the addres of a variable
@@ -18,8 +17,8 @@ func main() {
 	fmt.Println(x)
 	fmt.Println(*p)
 
-// 	// the zero value of a pointer is nil.
-// 	// pointer is also comparable, two pointers are equal if they point to the same variable or both are nil
+	// 	// the zero value of a pointer is nil.
+	// 	// pointer is also comparable, two pointers are equal if they point to the same variable or both are nil
 
 	fmt.Println(f(&x))
 	fmt.Println(f(&x))
@@ -32,7 +31,6 @@ func f(n *int) *int {
 	v := 5
 	return &v
 }
-
 
 // var n = flag.Bool("n", false, "omit trailing newline")
 // var sep = flag.String("s", " ", "separator")
