@@ -19,7 +19,7 @@ func main() {
 	fmt.Println(reflect.TypeOf(i), reflect.TypeOf(j), reflect.TypeOf(k))
 
 	// ommiting the type allows declaration of multiple variables of different types
-	var b, f,s = true, 2.3, "four"
+	var b, f, s = true, 2.3, "four"
 	fmt.Println(reflect.TypeOf(b), reflect.TypeOf(f), reflect.TypeOf(s))
 
 	// short variable declaration
@@ -39,4 +39,11 @@ func main() {
 	// a short variable declaration must be declare at least one new variable, so the the code below will not compile
 	// i, w := 2, "tiga"
 
+	// another way to create new variables is to use the built-in function new(T).
+	// This returns a pointer to a newly allocated zero value of type T.
+
+	n := new(int)
+	fmt.Println(reflect.TypeOf(n), *n) // *int 0
+	*n = 5
+	fmt.Println(*n) // 5
 }
